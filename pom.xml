@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.yt</groupId>
+    <artifactId>my-retrieval-artifact</artifactId>
+    <version>1.0.0</version>
+
+    <!--Java应用程序-->
+    <packaging>jar</packaging>
+    <name>my-retrieval-artifact</name>
+
+    <!--项目描述信息-->
+    <description>
+        仿照everything桌面工具的Java版本的实现
+    </description>
+
+    <!--团队信息-->
+    <developers>
+        <developer>
+            <id>01</id>
+            <name>YT</name>
+            <email>yangtian0415@yeah.net</email>
+            <roles>
+                <role>creater</role>
+                <role>tester</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <!--属性信息-->
+    <properties>
+        <encoding>UTF-8</encoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+    </properties>
+
+    <!--程序依赖的jar包-->
+    <dependencies>
+        <!--数据库相关的依赖-->
+        <!--暂时使用MySQL，JDBC编程屏蔽了数据库的差异，后后续改用H2-->
+        <!--<dependency>-->
+            <!--<groupId>mysql</groupId>-->
+            <!--<artifactId>mysql-connector-java</artifactId>-->
+            <!--<version>5.1.47</version>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.197</version>
+        </dependency>
+
+        <!--由阿里巴巴开源的数据库连接池druid-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.13</version>
+        </dependency>
+        <!--加入Lombook依赖-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.6</version>
+        </dependency>
+    </dependencies>
+
+    <!--程序构建信息[即编译插件、打包插件、依赖插件]-->
+    <build>
+        <!--构建信息
+        maven的功能都是通过插件完成的
+        1.plugin->多个goals
+        2.执行goal->绑定生命周期的某个阶段
+        3.通过插件的官网了解插件的使用
+        -->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+
+                <!--配置主清单文件-->
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <!--如果程序依赖了Jar包，也要将jar包加到Classpath-->
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.yt.retrievalartifact.cmd.CommandApplication</mainClass>
+                            <classpathPrefix>lib</classpathPrefix>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <version>3.1.1</version>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-lib</id>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <phase>package</phase>
+
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

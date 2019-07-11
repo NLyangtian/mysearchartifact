@@ -1,0 +1,11 @@
+
+tsquid:UselessImportCheck"PRemove this unused import 'com.yt.retrievalartifact.core.dao.DataSourceFactory'.(¼Ú¯¢
+@squid:S1148Ž"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+@squid:S1148€"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+?squid:S1148-"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+@squid:S1148‡"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+?squid:S1148p"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Â€í¤
+T
+squid:S106a"9Replace this use of System.out or System.err by a logger.(åö¡½úÿÿÿÿ
+?squid:S1148B"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ

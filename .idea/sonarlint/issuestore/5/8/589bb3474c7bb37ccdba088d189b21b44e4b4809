@@ -1,0 +1,17 @@
+
+>squid:S2189""Add an end condition to this loop.(˜ïˆžÿÿÿÿÿ
+@squid:S1481&")Remove this unused "name" local variable.(ªÏ¨è
+isquid:S3776
+"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Çµí‘
+g
+squid:S128"LEnd this switch case with an unconditional break, return or throw statement.(»±¸öþÿÿÿÿ
+Hsquid:S1602+",Remove useless curly braces around statement(Õ¨«‰ùÿÿÿÿ
+Osquid:S1854&"8Remove this useless assignment to local variable "name".(ªÏ¨è
+Isquid:S1199"-Extract this nested code block into a method.(Î—­Šþÿÿÿÿ
+Xsquid:UselessImportCheck"/Remove this unused import 'java.sql.SQLOutput'.(ê¤òÃùÿÿÿÿ
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(è·›íúÿÿÿÿ
+O
+squid:S106"9Replace this use of System.out or System.err by a logger.(ô¦–»
+T
+squid:S106,"9Replace this use of System.out or System.err by a logger.(‘ðâÒÿÿÿÿÿ
