@@ -41,4 +41,4 @@
 + 参考如下说明，配置文件
 + 启动程序 
    java -jar my-retrieval-artifact-1.0.0.jar [配置文件的路径]
-   
+   "# myretrievalartifact" 
